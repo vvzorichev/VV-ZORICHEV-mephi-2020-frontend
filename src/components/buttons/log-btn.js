@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './log-btn.css'
+import './buttons.css'
 
-const LogBtn = ({ logState, value, to, onLog = null }) => {
+const LogBtn = ({ logState, value, to, onLog }) => {
 	return (
 		logState || 
 		<li>

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import FileList from '../file-list';
 
 const MyCloudPage = ({ isLoggedIn }) => {
-
+	
 	if (!isLoggedIn) {
 		return <Redirect to="/login" />;
 	}

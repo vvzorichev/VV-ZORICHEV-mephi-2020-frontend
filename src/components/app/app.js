@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from '../header';
@@ -12,7 +12,6 @@ const App = () => {
 			<Header />
 			<Switch>
 				<Route 
-					exact
 					path="/mycloud" 
 					component={MyCloudPage} />
 				<Route 
@@ -23,7 +22,7 @@ const App = () => {
 					exact
 					path="/register"
 					component={RegisterPage} />
-				<Redirect to="/login" />
+				<Redirect to="/mycloud" />
 			</Switch>
 		</Router>
 	);

@@ -1,6 +1,13 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const LoginForm = () => {
+import { onLogin } from '../../actions';
+
+import { BigBlueBtn } from '../buttons';
+import Checkbox from '../checkbox';
+
+const LoginForm = ({ onLogin  }) => {
 	return (
 		<form className="form-signin">
 			<h1 className="h3 mb-3 font-weight-normal">
@@ -17,4 +24,10 @@ const LoginForm = () => {
 	);
 };
 
-export default LoginForm;
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		onLogin
+	}, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(LoginForm);
