@@ -1,27 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import LogBtn from '../log-btn';
+import { onLogout } from '../../actions';
 
 import './header.css';
 
-const Header = ({ onLogout }) => {
+const Header = ({ isLoggedIn, onLogout }) => {
+	const createAccount = 
+		<LogBtn 
+			logState={isLoggedIn} 
+			to="/register" 
+			value="Create Account" />;
+
+	const login = 
+		<LogBtn 
+			logState={isLoggedIn} 
+			to="/login" 
+			value="Login" />;
+	
+	const logout = 
+		<LogBtn 
+			logState={!isLoggedIn} 
+			to="/login" 
+			value="Logout" 
+			onLog={onLogout} />;
+
   return (
 		<div className="header d-flex">
 			<h3 className="mr-auto pt-1">
       	<Link className="ml-2 mt-2" to="/">SafeCloud</Link>
 			</h3>
 			<ul className="d-flex mr-1">
-				<li>
-					<Link className="btn" to="/register">Create Account</Link>
-				</li>
-				<li>
-					<Link className="btn" to="/login">Login</Link>
-				</li>
-				<li>
-					<Link className="btn" to="/login" onClick={onLogout}>Logout</Link>
-				</li>
+				{createAccount}
+				{login}
+				{logout}
 			</ul>
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps =  ({ isLoggedIn }) => {
+	return { isLoggedIn	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		onLogout
+	}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

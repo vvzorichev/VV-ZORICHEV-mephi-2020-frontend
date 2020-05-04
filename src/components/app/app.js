@@ -1,64 +1,32 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import { LoginPage, RegisterPage, MyCloudPage } from '../pages';
-import './app.css';
 import Header from '../header';
+import { LoginPage, RegisterPage, MyCloudPage } from '../pages';
 
-export default class App extends Component {
+import './app.css';
 
-	state = {
-		isLoggedIn: false
-	}
-
-	onLogin = () => {
-		this.setState({
-			isLoggedIn: true
-		});
-	};
-
-	onLogout = () => {
-		this.setState({
-			isLoggedIn: false
-		});
-	};
-
-	render() {
-
-		const { isLoggedIn } = this.state;
-
-		return (
-			<React.Fragment >
-				<Router>
-					<Header 
-						onLogout={this.onLogout}/>
-					<Switch>
-						<Route 
-							path="/mycloud" 
-							render={() => {
-								return (
-									<MyCloudPage 
-										isLoggedIn={isLoggedIn} />
-								);
-							}} />
-						<Route 
-							path="/login" 
-							render={() => {
-								return (
-									<LoginPage 
-										isLoggedIn={isLoggedIn}
-										onLogin={this.onLogin} />
-								);
-							}} />
-						<Route 
-							path="/register" 
-							render={() => 
-								<RegisterPage isLoggedIn={isLoggedIn} />
-							} />
-						<Redirect to="/mycloud" />
-					</Switch>
-				</Router>
-			</React.Fragment>
-		);
-	};
+const App = () => {
+	return (
+		<Router>
+			<Header />
+			<Switch>
+				<Route 
+					exact
+					path="/mycloud" 
+					component={MyCloudPage} />
+				<Route 
+					exact
+					path="/login" 
+					component={LoginPage} />
+				<Route 
+					exact
+					path="/register"
+					component={RegisterPage} />
+				<Redirect to="/login" />
+			</Switch>
+		</Router>
+	);
 };
+
+export default App;

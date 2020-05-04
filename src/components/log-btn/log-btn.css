@@ -1,0 +1,11 @@
+li {
+  list-style: none;
+  margin: 0;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+}
+
+li .btn {
+	background-color: none;
+	border-color: #375a7f;
+}
