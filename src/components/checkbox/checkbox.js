@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Checkbox = ({ label = null, id = "checkbox" }) => {
+const Checkbox = ({ value = null, id = "checkbox", isTagged = false }) => {
 	
-	const withLabel = label && 'mb-2 mt-2';
+	const withValue = value && 'mb-2 mt-2';
 
-	const tag = (
+	const [ tag, setTag ] = useState(isTagged);
+
+	const label = (
 		<label className="custom-control-label" htmlFor={id}>
-			{label}
+			{value}
 		</label>
 	);
 
 	return (
-		<div className={`custom-control custom-checkbox ${withLabel}`}>
-			<input type="checkbox" className="custom-control-input" id={id} />
-			{tag}
+		<div className={`custom-control custom-checkbox ${withValue}`}>
+			<input 
+				type="checkbox" 
+				className="custom-control-input" 
+				id={id} 
+				checked={tag} 
+				onChange={() => setTag(!tag)}/>
+			{label}
 		</div>
 	);
 };

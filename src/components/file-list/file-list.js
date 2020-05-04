@@ -1,9 +1,11 @@
 import React from 'react';
 import FileListItem from '../file-list-item';
+import { withFileService } from '../hoc-helpers';
 
-const FileList = ({ files = [{id: 1, name: 'file', size: '50 B', type: 'pdf', date_added: '20/04/2020' },
-														 {id: 2, name: 'msg', size: '100 MB', type: 'pdf', date_added: '1/05/2020' }] }) => {
 
+const FileList = ({ getFiles }) => {
+
+	const files = getFiles();
 
 	return (
 		<div className="table-responsive">
@@ -31,4 +33,10 @@ const FileList = ({ files = [{id: 1, name: 'file', size: '50 B', type: 'pdf', da
 	);
 };
 
-export default FileList;
+const mapMethodsToProps = (fileService) => {
+	return {
+		getFiles: fileService.getFiles
+	};
+};
+
+export default withFileService(mapMethodsToProps)(FileList);

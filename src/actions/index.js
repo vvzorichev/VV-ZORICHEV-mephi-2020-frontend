@@ -1,16 +1,9 @@
-const onLogin = () => {
-	return {
-		type: 'LOGIN'
-	};
-};
-
-const onLogout = () => {
-	return {
-		type: 'LOGOUT'
-	};
-};
+import {
+	onLogin,
+	onLogout
+} from './user-actions';
 
 export {
 	onLogin,
 	onLogout
-}
+};

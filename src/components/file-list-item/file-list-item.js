@@ -2,12 +2,12 @@ import React from 'react';
 import Checkbox from '../checkbox';
 
 const FileListItem = ({ file = {} }) => {
-	const { id, name, size, type, date_added } = file;
+	const { id, name, size, type, date_added, isTagged } = file;
 
 	return (
 		<tr>
 			<td>
-				<Checkbox id={id}/>
+				<Checkbox id={id} isTagged={isTagged} />
 			</td>
 			<td>{name}</td>
 			<td>{size}</td>
