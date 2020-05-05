@@ -45,6 +45,9 @@ const FileList = ({ section, getFiles }) => {
 					{
 						files
 							.filter(file => filter(file, section))
+							.sort((fileA, fileB) => {
+								return fileA.name.localeCompare(fileB.name);
+							})
 							.map((file) => {
 							return (
 								<FileListItem key={file.id} file={file}/>

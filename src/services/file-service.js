@@ -43,6 +43,13 @@ export default class fileService {
 				size: '10 KB', 
 				type: 'js', 
 				date_added: '5/5/2020',
+				isTagged: false },
+			{
+				id: 7, 
+				name: 'Загрузки', 
+				size: '100 MB', 
+				type: 'folder', 
+				date_added: '1/6/2019',
 				isTagged: false }
 		];
 	};
