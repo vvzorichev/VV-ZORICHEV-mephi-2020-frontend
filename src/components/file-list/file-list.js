@@ -3,9 +3,31 @@ import FileListItem from '../file-list-item';
 import { withFileService } from '../hoc-helpers';
 
 
-const FileList = ({ getFiles }) => {
+const FileList = ({ section, getFiles }) => {
 
 	const files = getFiles();
+
+	const filter = (file, section) => {
+		switch (section) {
+			case 'drive':
+				return true;
+
+			case 'folders':
+				return file.type === 'folder';
+
+			case 'recents':
+				const month = (new Date()).getMonth();
+				const reg1 = new RegExp(`/${month}/`);
+				const reg2 = new RegExp(`/${month + 1}/`);
+				return reg1.test(file.date_added) || reg2.test(file.date_added);
+
+			case 'tagged':
+				return file.isTagged;
+
+			default:
+				return true;
+		}
+	}
 
 	return (
 		<div className="table-responsive">
@@ -21,7 +43,9 @@ const FileList = ({ getFiles }) => {
 				</thead>
 				<tbody>
 					{
-						files.map((file) => {
+						files
+							.filter(file => filter(file, section))
+							.map((file) => {
 							return (
 								<FileListItem key={file.id} file={file}/>
 							);

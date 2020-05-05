@@ -7,33 +7,3 @@
 	padding-bottom: 40px;
 	height: 100%;
 }
-
-.sidebar {
-  padding: .3rem .5rem;
-}
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-}
-
-.sidebar .nav-link {
-  font-weight: 500;
-  color: white;
-}
-
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: rgb(119, 119, 119);
-}
-
-.sidebar .nav-link.active {
-  color: #007bff;
-}
-
-.sidebar-heading {
-  font-size: .75rem;
-  text-transform: uppercase;
-}

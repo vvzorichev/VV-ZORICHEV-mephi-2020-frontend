@@ -11,8 +11,8 @@ const App = () => {
 		<Router>
 			<Header />
 			<Switch>
-				<Route 
-					path="/mycloud" 
+				<Route
+					path="/mycloud/:nav?" 
 					component={MyCloudPage} />
 				<Route 
 					exact
@@ -22,7 +22,7 @@ const App = () => {
 					exact
 					path="/register"
 					component={RegisterPage} />
-				<Redirect to="/mycloud" />
+				<Redirect to="/mycloud/drive" />
 			</Switch>
 		</Router>
 	);

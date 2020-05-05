@@ -31,7 +31,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
   return (
 		<div className="header d-flex">
 			<h3 className="mr-auto pt-1">
-      	<Link className="ml-2 mt-2" to="/">SafeCloud</Link>
+      	<Link className="ml-2 mt-2" to="/mycloud/drive">SafeCloud</Link>
 			</h3>
 			<ul className="d-flex mr-1">
 				{createAccount}

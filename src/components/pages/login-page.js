@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { LoginForm } from '../forms';
 
 const LoginPage = ({ isLoggedIn }) => {
-	
+
+	useEffect(() => {
+		document.title = 'Login - SafeCloud'
+	});
+
 	if (isLoggedIn) {
-		return <Redirect to="/mycloud" />;
+		return <Redirect to="/mycloud/drive" />;
 	}
 
   return (
