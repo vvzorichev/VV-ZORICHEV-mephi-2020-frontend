@@ -15,7 +15,7 @@ export default class fileService {
 				size: '100 MB', 
 				type: 'folder', 
 				date_added: '4/2/2020',
-				isTagged: true },
+				isTagged: false },
 			{
 				id: 3, 
 				name: 'data_base', 
@@ -29,7 +29,7 @@ export default class fileService {
 				size: '220 MB', 
 				type: 'folder', 
 				date_added: '3/4/2020',
-				isTagged: false },
+				isTagged: true },
 			{
 				id: 5, 
 				name: 'memes', 

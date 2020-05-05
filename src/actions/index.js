@@ -3,7 +3,14 @@ import {
 	onLogout
 } from './user-actions';
 
+import {
+	onUploadStart,
+	onUploadFinish
+} from './file-actions';
+
 export {
 	onLogin,
-	onLogout
+	onLogout,
+	onUploadStart,
+	onUploadFinish
 };
