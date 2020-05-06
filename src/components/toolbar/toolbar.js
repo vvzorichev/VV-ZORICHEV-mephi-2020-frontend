@@ -13,7 +13,7 @@ const Toolbar = () => {
 					<UploadBtn value="File Upload" />
 					<UploadBtn value="Folder Upload" />
 				</div>
-				<div className="form-group mr-2">
+				<div className="btn-group mr-2">
 					<UploadFileForm />
 				</div>
 			</div>
