@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 
 import { onUploadFinish } from '../../../actions';
 
+const mapStateToProps =  ({ isUpload }) => {
+	return { isUpload	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		onUploadFinish
+	}, dispatch);
+};
+
 const UploadFileForm = ({ onUploadFinish, isUpload }) => {
 	return (
 		!isUpload ||
@@ -18,15 +28,5 @@ const UploadFileForm = ({ onUploadFinish, isUpload }) => {
 		</form>
 	);
 };
-
-const mapStateToProps =  ({ isUpload }) => {
-	return { isUpload	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({
-		onUploadFinish
-	}, dispatch);
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadFileForm);

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 const Checkbox = ({ value = null, id = "checkbox", isTagged = false }) => {
 	
-	const withValue = value && 'mb-2 mt-2';
-
 	const [ tag, setTag ] = useState(isTagged);
 
+	const withValue = value && 'mb-2 mt-2';
+	
 	const label = (
 		<label className="custom-control-label" htmlFor={id}>
 			{value}

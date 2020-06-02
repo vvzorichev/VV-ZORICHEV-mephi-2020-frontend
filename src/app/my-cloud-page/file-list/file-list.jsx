@@ -1,33 +1,18 @@
 import React from 'react';
+
 import FileListItem from './file-list-item';
 import { withFileService } from '../../common/hoc-helpers';
+import { filesFilter } from '../../../utils';
 
+const mapMethodsToProps = (fileService) => {
+	return {
+		getFiles: fileService.getFiles
+	};
+};
 
 const FileList = ({ section, getFiles }) => {
-
+	
 	const files = getFiles();
-
-	const filter = (file, section) => {
-		switch (section) {
-			case 'drive':
-				return true;
-
-			case 'folders':
-				return file.type === 'folder';
-
-			case 'recents':
-				const month = (new Date()).getMonth();
-				const reg1 = new RegExp(`/${month}/`);
-				const reg2 = new RegExp(`/${month + 1}/`);
-				return reg1.test(file.date_added) || reg2.test(file.date_added);
-
-			case 'tagged':
-				return file.isTagged;
-
-			default:
-				return true;
-		}
-	}
 
 	return (
 		<div className="table-responsive">
@@ -44,7 +29,7 @@ const FileList = ({ section, getFiles }) => {
 				<tbody>
 					{
 						files
-							.filter(file => filter(file, section))
+							.filter((file) => filesFilter(file, section))
 							.sort((fileA, fileB) => {
 								return fileA.name.localeCompare(fileB.name);
 							})
@@ -58,12 +43,6 @@ const FileList = ({ section, getFiles }) => {
 			</table>
 		</div>
 	);
-};
-
-const mapMethodsToProps = (fileService) => {
-	return {
-		getFiles: fileService.getFiles
-	};
 };
 
 export default withFileService(mapMethodsToProps)(FileList);
