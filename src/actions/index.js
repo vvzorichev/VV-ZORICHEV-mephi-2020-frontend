@@ -1,14 +1,17 @@
+import fetchFiles from './file-list-actions';
+
 import {
 	onLogin,
 	onLogout
-} from './user-actions';
+} from './log-status-actions';
 
 import {
 	onUploadStart,
 	onUploadFinish
-} from './file-actions';
+} from './upload-status-actions';
 
 export {
+	fetchFiles,
 	onLogin,
 	onLogout,
 	onUploadStart,

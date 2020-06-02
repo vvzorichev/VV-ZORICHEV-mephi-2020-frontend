@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import './log-btn.css'
 
-const LogBtn = ({ logState, value, to, onLog }) => {
+const LogBtn = ({ logStatus, value, to, onLog }) => {
 	return (
-		logState || 
+		logStatus|| 
 		<li>
 			<Link className="btn" to={to} onClick={onLog}>
 				{value}

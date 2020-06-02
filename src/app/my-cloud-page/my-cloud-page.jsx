@@ -34,7 +34,7 @@ const MyCloudPage = ({ isLoggedIn, match }) => {
 	);
 };
 
-const mapStateToProps =  ({ isLoggedIn }) => {
+const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
 	return { isLoggedIn	};
 };
 

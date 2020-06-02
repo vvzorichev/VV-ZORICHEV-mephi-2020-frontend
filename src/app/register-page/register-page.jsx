@@ -27,7 +27,7 @@ const RegisterPage = ({ isLoggedIn }) => {
   );
 };
 
-const mapStateToProps =  ({ isLoggedIn }) => {
+const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
 	return { isLoggedIn	};
 };
 

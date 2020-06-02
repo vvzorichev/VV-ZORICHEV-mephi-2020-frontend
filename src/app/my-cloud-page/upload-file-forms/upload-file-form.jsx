@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { onUploadFinish } from '../../../actions';
 
-const mapStateToProps =  ({ isUpload }) => {
+const mapStateToProps =  ({ uploadStatus: { isUpload } }) => {
 	return { isUpload	};
 };
 

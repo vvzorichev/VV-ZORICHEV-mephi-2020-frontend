@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 
 import LoginForm from './login-form';
 
+const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
+	return { isLoggedIn	};
+};
+
 const LoginPage = ({ isLoggedIn }) => {
 
 	useEffect(() => {
@@ -25,10 +29,6 @@ const LoginPage = ({ isLoggedIn }) => {
 			</p>
 		</div>
   );
-};
-
-const mapStateToProps =  ({ isLoggedIn }) => {
-	return { isLoggedIn	};
 };
 
 export default connect(mapStateToProps)(LoginPage);

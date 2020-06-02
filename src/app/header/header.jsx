@@ -8,22 +8,32 @@ import { onLogout } from '../../actions';
 
 import './header.css';
 
+const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
+	return { isLoggedIn	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		onLogout
+	}, dispatch);
+};
+
 const Header = ({ isLoggedIn, onLogout }) => {
 	const createAccount = 
 		<LogBtn 
-			logState={isLoggedIn} 
+			logStatus={isLoggedIn} 
 			to="/register" 
 			value="Create Account" />;
 
 	const login = 
 		<LogBtn 
-			logState={isLoggedIn} 
+			logStatus={isLoggedIn} 
 			to="/login" 
 			value="Login" />;
 	
 	const logout = 
 		<LogBtn 
-			logState={!isLoggedIn} 
+			logStatus={!isLoggedIn} 
 			to="/login" 
 			value="Logout" 
 			onLog={onLogout} />;
@@ -41,15 +51,5 @@ const Header = ({ isLoggedIn, onLogout }) => {
     </div>
   );
 };
-
-const mapStateToProps =  ({ isLoggedIn }) => {
-	return { isLoggedIn	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({
-		onLogout
-	}, dispatch);
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

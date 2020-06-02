@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 
 import { onUploadStart } from '../../../actions';
 
+const mapStateToProps =  ({ uploadStatus: { isUpload } }) => {
+	return { isUpload	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({
+		onUploadStart
+	}, dispatch);
+};
+
 const UploadBtn = ({ value, onUploadStart, isUpload }) => {
 
 	return (
@@ -15,15 +25,5 @@ const UploadBtn = ({ value, onUploadStart, isUpload }) => {
 		</button>
 	);
 };
-
-const mapStateToProps =  ({ isUpload }) => {
-	return { isUpload	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({
-		onUploadStart
-	}, dispatch);
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadBtn);
