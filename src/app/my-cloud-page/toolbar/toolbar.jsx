@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { UploadBtn } from '../../common/buttons';
-import { UploadFileForm } from '../../common/forms';
+import UploadFileForm from '../../common/upload-file-forms';
 
 const Toolbar = () => {
 	return (

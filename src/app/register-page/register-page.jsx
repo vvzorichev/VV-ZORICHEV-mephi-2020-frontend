@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { LoginForm } from '../common/forms';
+import RegisterForm  from './register-form';
 
-const LoginPage = ({ isLoggedIn }) => {
+const RegisterPage = ({ isLoggedIn }) => {
 
 	useEffect(() => {
-		document.title = 'Login - SafeCloud'
+		document.title = 'Register - SafeCloud'
 	});
 
 	if (isLoggedIn) {
@@ -17,9 +17,9 @@ const LoginPage = ({ isLoggedIn }) => {
   return (
     <div className="text-center flex-column">
 			<h1 className="h3 mb-1 font-weight-normal">
-				Login
+				Create your account
 			</h1>
-			<LoginForm />
+			<RegisterForm />
 			<p className="mt-5 text-muted">
 				&copy; SafeCloud 2020
 			</p>
@@ -31,4 +31,4 @@ const mapStateToProps =  ({ isLoggedIn }) => {
 	return { isLoggedIn	};
 };
 
-export default connect(mapStateToProps)(LoginPage);
+export default connect(mapStateToProps)(RegisterPage);

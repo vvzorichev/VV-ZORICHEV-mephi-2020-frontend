@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Sidebar from '../my-cloud-page/sidebar';
-import FileList from '../my-cloud-page/file-list';
-import Toolbar from '../my-cloud-page/toolbar';
+import Sidebar from './sidebar';
+import FileList from './file-list';
+import Toolbar from './toolbar';
 
 const MyCloudPage = ({ isLoggedIn, match }) => {
 

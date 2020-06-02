@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from './header';
-import { LoginPage, RegisterPage, MyCloudPage } from './pages';
+import MyCloudPage from './my-cloud-page';
+import LoginPage from './login-page';
+import RegisterPage from './register-page';
 
 import './app.css';
 

@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 
 import { onLogin } from '../../../actions';
 
-import { BigBlueBtn } from '../buttons';
-import Checkbox from '../checkbox';
+import { BigBlueBtn } from '../../common/buttons';
+import Checkbox from '../../common/checkbox';
 
-import './forms.css';
+import './register-form.css';
 
 const RegisterForm = ({ onCreate = null  }) => {
 	return (
