@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../../common/checkbox';
+import Checkbox from '../../../common/checkbox';
 
 const FileListItem = ({ file = {} }) => {
 	const { id, name, size, type, date_added, isTagged } = file;

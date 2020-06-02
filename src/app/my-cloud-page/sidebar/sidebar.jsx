@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarItem from '../sidebar-item';
+import SidebarItem from './sidebar-item';
 import './sidebar.css';
 
 const Sidebar = ({ section }) => {

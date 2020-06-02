@@ -1,5 +1,5 @@
 import React from 'react';
-import FileListItem from '../file-list-item';
+import FileListItem from './file-list-item';
 import { withFileService } from '../../common/hoc-helpers';
 
 
