@@ -2,16 +2,14 @@ import React from 'react';
 
 import { FileServiceConsumer } from '../file-service-context';
 
-const withFileService = (mapMethodsToProps) => (Wrapped) => {
+const withFileService = () => (Wrapped) => {
 	return (props) => {
 		return (
 			<FileServiceConsumer>
 				{
 					(fileService) => {
-						const serviceProps = mapMethodsToProps(fileService);
-
 						return (
-							<Wrapped {...props} {...serviceProps}/>
+							<Wrapped {...props} fileService={fileService}/>
 						);
 					}
 				}

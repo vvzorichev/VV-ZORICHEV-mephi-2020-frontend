@@ -20,7 +20,7 @@ const filesError= (error) => {
 
 const fetchFiles = (fileService) => () => (dispatch) => {
 	dispatch(filesRequested());
-	fileService.getFiless()
+	fileService.getFiles()
 		.then((data) => dispatch(filesLoaded(data)))
 		.catch((err) => dispatch(filesError(err)));
 }; 

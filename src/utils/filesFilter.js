@@ -1,5 +1,6 @@
 const filesFilter = (file, section) => {
 	switch (section) {
+		
 		case 'drive':
 			return true;
 

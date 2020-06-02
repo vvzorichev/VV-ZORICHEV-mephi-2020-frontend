@@ -1,19 +1,9 @@
 import React from 'react';
 
 import FileListItem from './file-list-item';
-import { withFileService } from '../../common/hoc-helpers';
 import { filesFilter } from '../../../utils';
 
-const mapMethodsToProps = (fileService) => {
-	return {
-		getFiles: fileService.getFiles
-	};
-};
-
-const FileList = ({ section, getFiles }) => {
-	
-	const files = getFiles();
-
+const FileList = ({ section, files }) => {
 	return (
 		<div className="table-responsive">
 			<table className="table table-sm">
@@ -45,4 +35,4 @@ const FileList = ({ section, getFiles }) => {
 	);
 };
 
-export default withFileService(mapMethodsToProps)(FileList);
+export default FileList;
