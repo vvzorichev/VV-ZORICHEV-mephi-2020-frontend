@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './buttons.css'
+import './log-btn.css'
 
 const LogBtn = ({ logState, value, to, onLog }) => {
 	return (

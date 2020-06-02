@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { LogBtn } from '../common/buttons';
+import LogBtn from './log-btn';
 import { onLogout } from '../../actions';
 
 import './header.css';
