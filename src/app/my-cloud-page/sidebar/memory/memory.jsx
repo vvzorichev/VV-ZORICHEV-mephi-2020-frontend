@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Memory = ({ memory }) => {
-	console.log(memory);
 	return (
 		<div className="d-flex flex-column">
 			<h5 className="sidebar-heading px-3 mt-4 mb-1 text-muted">
