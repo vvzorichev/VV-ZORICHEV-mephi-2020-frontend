@@ -6,9 +6,7 @@ const updateUploadStatus = (state, action) => {
 		};
 	}
 
-	const { type } = action;
-
-	switch (type) {
+	switch (action.type) {
 		
 		case 'UPLOAD_START':
 			return {

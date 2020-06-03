@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FileServiceConsumer } from '../file-service-context';
+import { FileServiceConsumer } from '../services-context';
 
 const withFileService = () => (Wrapped) => {
 	return (props) => {

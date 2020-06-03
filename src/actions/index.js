@@ -1,4 +1,5 @@
 import fetchFiles from './file-list-actions';
+import fetchMemory from './memory-actions';
 
 import {
 	onLogin,
@@ -12,6 +13,7 @@ import {
 
 export {
 	fetchFiles,
+	fetchMemory,
 	onLogin,
 	onLogout,
 	onUploadStart,

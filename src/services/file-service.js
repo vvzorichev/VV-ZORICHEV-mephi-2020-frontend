@@ -1,4 +1,4 @@
-export default class fileService {
+export default class FileService {
 
 	data = [
 		{

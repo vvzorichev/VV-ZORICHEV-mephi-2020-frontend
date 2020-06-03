@@ -1,5 +1,7 @@
 import React from 'react';
 import SidebarItem from './sidebar-item';
+import Memory from './memory';
+
 import './sidebar.css';
 
 const Sidebar = ({ section }) => {
@@ -12,9 +14,7 @@ const Sidebar = ({ section }) => {
 					<SidebarItem value="Recents" nav="recents" section={section}/>
 					<SidebarItem value="Tagged" nav="tagged" section={section}/>
 				</ul>
-				<h5 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-					<span>Memory used</span>
-				</h5>
+				<Memory />
 			</div>
 		</nav>
 	);
