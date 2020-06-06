@@ -3,7 +3,8 @@ import React from 'react';
 import FileListItem from './file-list-item';
 import { filesFilter } from '../../../utils';
 
-const FileList = ({ section, files }) => {
+const FileList = ({ section, files, searchField }) => {
+
 	return (
 		<div className="table-responsive">
 			<table className="table table-sm">
@@ -19,7 +20,7 @@ const FileList = ({ section, files }) => {
 				<tbody>
 					{
 						files
-							.filter((file) => filesFilter(file, section))
+							.filter((file) => filesFilter(file, searchField, section))
 							.sort((fileA, fileB) => {
 								return fileA.name.localeCompare(fileB.name);
 							})

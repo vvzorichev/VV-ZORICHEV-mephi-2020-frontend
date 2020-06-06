@@ -11,8 +11,11 @@ import ErrorIndicator from '../../common/error-indicator';
 
 import FileList from './file-list.jsx'
 
-const mapStateToProps = ({ fileList: { files, loading, error }}) => {
-	return { files, loading, error };
+const mapStateToProps = ({
+	fileList: { files, loading, error }, 
+	searchField: { searchField } 
+}) => {
+	return { files, loading, error, searchField };
 };
 
 const mapDispatchToProps = (dispatch, { fileService }) => {
@@ -28,7 +31,7 @@ class FileListContainer extends Component {
 	}
 
 	render() {
-		const { files, loading, error, section } = this.props;
+		const { files, loading, error, section, searchField } = this.props;
 
 		if (loading) {
 			return <Spinner />;
@@ -38,7 +41,7 @@ class FileListContainer extends Component {
 			return <ErrorIndicator />;
 		}
 
-		return <FileList section={section} files={files}/>;
+		return <FileList section={section} files={files} searchField={searchField}/>;
 	}
 };
 
