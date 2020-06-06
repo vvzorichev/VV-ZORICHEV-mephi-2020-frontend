@@ -1,0 +1,10 @@
+.search-panel .form-control {
+	background-color: #222;
+	color: white;
+	border: none;
+  border-bottom: 1px solid #375a7f;
+}
+
+.search-panel .form-control :focus {
+	border: none;
+}
