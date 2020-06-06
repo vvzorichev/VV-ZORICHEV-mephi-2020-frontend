@@ -1,6 +1,8 @@
 import fetchFiles from './file-list-actions';
 import fetchMemory from './memory-actions';
 
+import { onSearch } from './search-field-actions';
+
 import {
 	onLogin,
 	onLogout
@@ -14,6 +16,7 @@ import {
 export {
 	fetchFiles,
 	fetchMemory,
+	onSearch,
 	onLogin,
 	onLogout,
 	onUploadStart,

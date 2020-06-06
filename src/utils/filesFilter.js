@@ -1,8 +1,17 @@
-const filesFilter = (file, section) => {
+const filesFilter = (file, searchField, section) => {
+
+	const isNameEqual = () => {
+		if (!searchField) {
+			return true;
+		}
+		const reg = new RegExp(`${searchField}`);
+		return reg.test(file.name);
+	}
+
 	switch (section) {
 		
 		case 'drive':
-			return true;
+			return isNameEqual();
 
 		case 'folders':
 			return file.type === 'folder';

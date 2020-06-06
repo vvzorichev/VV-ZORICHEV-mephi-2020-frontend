@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import SearchPanel from './search-panel';
 import LogBtn from './log-btn';
 import { onLogout } from '../../actions';
 
@@ -38,11 +39,14 @@ const Header = ({ isLoggedIn, onLogout }) => {
 			value="Logout" 
 			onLog={onLogout} />;
 
+	const searchPanel = isLoggedIn && <SearchPanel />
+
   return (
 		<div className="header d-flex">
 			<h3 className="mr-auto pt-1">
       	<Link className="ml-2 mt-2" to="/mycloud/drive">SafeCloud</Link>
 			</h3>
+			{searchPanel}
 			<ul className="d-flex mr-1">
 				{createAccount}
 				{login}
