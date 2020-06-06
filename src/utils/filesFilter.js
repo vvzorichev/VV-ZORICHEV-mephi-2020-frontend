@@ -1,17 +1,16 @@
+import isNameEqual from './isNameEqual';
+
 const filesFilter = (file, searchField, section) => {
 
-	const isNameEqual = () => {
-		if (!searchField) {
-			return true;
-		}
-		const reg = new RegExp(`${searchField}`);
-		return reg.test(file.name);
+	const isFileNameEqual = isNameEqual(file.name, searchField);
+	if (!isFileNameEqual) {
+		return false;
 	}
 
 	switch (section) {
 		
 		case 'drive':
-			return isNameEqual();
+			return true;
 
 		case 'folders':
 			return file.type === 'folder';

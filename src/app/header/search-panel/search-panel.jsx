@@ -18,11 +18,11 @@ const SearchPanel = ({ onSearch }) => {
 	};
 
 	return (
-		<div class="search-panel mr-auto col-6 mt-1">
+		<div class="search-panel mr-auto col-6 mt-2">
 			<input 
 				type="text" 
 				class="form-control"
-				placeholder="Сloud search"
+				placeholder="Search in Cloud"
 				onChange={handleChange}/>
 		</div>
 	);
