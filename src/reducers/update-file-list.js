@@ -1,3 +1,22 @@
+const updateFile= (file) => {
+	return {
+		...file,
+		isTagged: !file.isTagged
+	};
+};
+
+const changeTag = (fileList, fileId) => {
+	console.log(fileList)
+	const fileIndex = fileList.findIndex(({ id }) => id === fileId);
+	const newFile = updateFile(fileList[fileIndex]);
+
+	return [
+		...fileList.slice(0, fileIndex),
+		newFile,
+		...fileList.slice(fileIndex + 1)
+	];
+};
+
 const updateFileList = (state, action) => {
 
 	if (state === undefined) {
@@ -31,6 +50,13 @@ const updateFileList = (state, action) => {
 				files: [],
 				loading: false,
 				error: payload
+			};
+
+		case 'CHANGE_FILE_TAG':
+			return {
+				files: changeTag(state.fileList.files, payload),
+				loading: false,
+				error: null
 			};
 
 		default:

@@ -3,7 +3,7 @@ import React from 'react';
 import FileListItem from './file-list-item';
 import { filesFilter } from '../../../utils';
 
-const FileList = ({ section, files, searchField }) => {
+const FileList = ({ section, files, searchField, changeFileTag }) => {
 
 	return (
 		<div className="table-responsive">
@@ -26,7 +26,10 @@ const FileList = ({ section, files, searchField }) => {
 							})
 							.map((file) => {
 							return (
-								<FileListItem key={file.id} file={file}/>
+								<FileListItem 
+									key={file.id} 
+									file={file} 
+									changeFileTag={changeFileTag}/>
 							);
 						})
 					}

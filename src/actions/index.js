@@ -1,4 +1,4 @@
-import fetchFiles from './file-list-actions';
+import { fetchFiles, changeFileTag } from './file-list-actions';
 import fetchMemory from './memory-actions';
 
 import { onSearch } from './search-field-actions';
@@ -15,6 +15,7 @@ import {
 
 export {
 	fetchFiles,
+	changeFileTag,
 	fetchMemory,
 	onSearch,
 	onLogin,

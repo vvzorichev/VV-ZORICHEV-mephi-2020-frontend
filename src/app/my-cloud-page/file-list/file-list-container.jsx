@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { withFileService } from '../../common/hoc-helpers';
 import { compose } from '../../../utils';
-import { fetchFiles } from '../../../actions';
+import { fetchFiles, changeFileTag } from '../../../actions';
 
 import Spinner from '../../common/spinner';
 import ErrorIndicator from '../../common/error-indicator';
@@ -20,7 +20,8 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = (dispatch, { fileService }) => {
 	return bindActionCreators({
-		fetchFiles: fetchFiles(fileService)
+		fetchFiles: fetchFiles(fileService),
+		changeFileTag
 	}, dispatch);
 };
 
@@ -31,7 +32,13 @@ class FileListContainer extends Component {
 	}
 
 	render() {
-		const { files, loading, error, section, searchField } = this.props;
+		const { 
+			files, 
+			loading, 
+			error, 
+			section, 
+			searchField,
+			changeFileTag } = this.props;
 
 		if (loading) {
 			return <Spinner />;
@@ -41,7 +48,13 @@ class FileListContainer extends Component {
 			return <ErrorIndicator />;
 		}
 
-		return <FileList section={section} files={files} searchField={searchField}/>;
+		return (
+			<FileList 
+				section={section} 
+				files={files} 
+				searchField={searchField}
+				changeFileTag={changeFileTag} /> 
+		);
 	}
 };
 

@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 
-const Checkbox = ({ value = null, id = "checkbox", isTagged = false }) => {
+const Checkbox = ({ 
+	value = null,
+	id = "checkbox",
+	isTagged = false,
+	changeFileTag }) => {
 	
 	const [ tag, setTag ] = useState(isTagged);
 
@@ -19,7 +23,10 @@ const Checkbox = ({ value = null, id = "checkbox", isTagged = false }) => {
 				className="custom-control-input" 
 				id={id} 
 				checked={tag} 
-				onChange={() => setTag(!tag)}/>
+				onChange={() => {
+					setTag(!tag);
+					changeFileTag(id);
+				}} />
 			{label}
 		</div>
 	);
