@@ -5,14 +5,19 @@ import updateLogStatus from './update-log-status';
 import updateUploadStatus from './update-upload-status';
 
 const reducer = (state, action) => {
-	console.log(action.type)
 	const fileList = updateFileList(state, action);
 	const memory = updateMemory(state, action);
-	const searchField = updateSearchField(state, action);
 	const logStatus = updateLogStatus(state, action);
+
+	const searchField =
+		logStatus.isLoggedIn ?
+		updateSearchField(state, action) :
+		updateSearchField(undefined, action);
+	
 	const uploadStatus = 
-		logStatus.isLoggedIn && 
-		updateUploadStatus(state, action);
+		logStatus.isLoggedIn ? 
+		updateUploadStatus(state, action) :
+		updateUploadStatus(undefined, action);
 
 	return {
 		fileList,

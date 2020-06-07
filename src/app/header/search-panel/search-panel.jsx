@@ -1,6 +1,9 @@
 import React from 'react';
 import { bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from '../../../utils';
+
 import { onSearch } from '../../../actions';
 
 import './search-panel.css';
@@ -11,21 +14,27 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
-const SearchPanel = ({ onSearch }) => {
-
+const SearchPanel = ({ onSearch, history }) => {
+	
 	const handleChange = (event) => {
+		if (history.location.pathname !== '/mycloud/drive') {
+			history.replace('/mycloud/drive');
+		}
 		onSearch(event.target.value);
 	};
 
 	return (
-		<div class="search-panel mr-auto col-6 mt-2">
+		<div className="search-panel mr-auto col-6 mt-2">
 			<input 
 				type="text" 
-				class="form-control"
+				className="form-control"
 				placeholder="Search in Cloud"
 				onChange={handleChange}/>
 		</div>
 	);
 };
 
-export default connect(null, mapDispatchToProps)(SearchPanel);
+export default compose(
+	connect(null, mapDispatchToProps),
+	withRouter
+)(SearchPanel);

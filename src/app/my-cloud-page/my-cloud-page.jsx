@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { compose } from '../../utils';
 
 import Sidebar from './sidebar';
 import FileList from './file-list';
 import Toolbar from './toolbar';
 
-const MyCloudPage = ({ isLoggedIn, match }) => {
+const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
+	return { isLoggedIn	};
+};
 
-	const { nav } = match.params.nav ? match.params : { nav: 'drive'};
+const MyCloudPage = ({ isLoggedIn, match }) => {
 	
+	const { nav } = match.params.nav ? match.params : { nav: 'drive'};
+
 	useEffect(() => {
 		document.title = 'MyCloud - SafeCloud'
 	});
@@ -34,8 +39,7 @@ const MyCloudPage = ({ isLoggedIn, match }) => {
 	);
 };
 
-const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
-	return { isLoggedIn	};
-};
-
-export default connect(mapStateToProps)(withRouter(MyCloudPage));
+export default compose(
+	connect(mapStateToProps),
+	withRouter
+)(MyCloudPage);
