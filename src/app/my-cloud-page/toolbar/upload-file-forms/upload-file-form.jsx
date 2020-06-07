@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { onUploadFinish } from '../../../actions';
+import { onUploadFinish } from '../actions';
 
 const mapStateToProps =  ({ uploadStatus: { isUpload } }) => {
 	return { isUpload	};

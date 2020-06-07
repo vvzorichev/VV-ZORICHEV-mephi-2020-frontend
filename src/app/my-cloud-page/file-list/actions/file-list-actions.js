@@ -18,13 +18,6 @@ const filesError= (error) => {
 	};
 };
 
-const changeFileTag= (id) => {
-	return {
-		type: 'CHANGE_FILE_TAG',
-		payload: id
-	};
-};
-
 const fetchFiles = (fileService) => () => (dispatch) => {
 	dispatch(filesRequested());
 	fileService.getFiles()
@@ -32,7 +25,4 @@ const fetchFiles = (fileService) => () => (dispatch) => {
 		.catch((err) => dispatch(filesError(err)));
 }; 
 
-export {
-	fetchFiles,
-	changeFileTag
-};
+export default fetchFiles;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from '../../../utils';
 
-import { onSearch } from '../../../actions';
+import onSearch from './actions';
 
 import './search-panel.css';
 

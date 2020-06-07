@@ -6,7 +6,6 @@ const updateFile= (file) => {
 };
 
 const changeTag = (fileList, fileId) => {
-	console.log(fileList)
 	const fileIndex = fileList.findIndex(({ id }) => id === fileId);
 	const newFile = updateFile(fileList[fileIndex]);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import UploadBtn from '../upload-btn';
-import UploadFileForm from '../upload-file-forms';
+import UploadBtn from './upload-btn';
+import UploadFileForm from './upload-file-forms';
 
 const Toolbar = () => {
 	return (

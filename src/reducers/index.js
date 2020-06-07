@@ -1,8 +1,8 @@
-import updateFileList from './update-file-list';
+import updateFileList from '../app/my-cloud-page/file-list/reducers/update-file-list';
 import updateMemory from './update-memory';
-import updateSearchField from './update-search-field';
+import updateSearchField from '../app/header/search-panel/reducers';
 import updateLogStatus from './update-log-status';
-import updateUploadStatus from './update-upload-status';
+import updateUploadStatus from '../app/my-cloud-page/toolbar/reducers';
 
 const reducer = (state, action) => {
 	const fileList = updateFileList(state, action);

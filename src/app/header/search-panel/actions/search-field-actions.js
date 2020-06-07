@@ -5,6 +5,4 @@ const onSearch = (searchData) => {
 	};
 };
 
-export {
-	onSearch
-};
+export default onSearch;

@@ -5,12 +5,15 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import ErrorBoundary from './app/common/error-boudary';
+
 import { 
 	FileServiceProvider, 
 	MemoryServiceProvider } from './app/common/services-context';
+
 import { 
 	FileService, 
 	MemoryService} from './services';
+
 import App from './app';
 
 const fileService = new FileService();
