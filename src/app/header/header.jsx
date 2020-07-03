@@ -1,23 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 
 import SearchPanel from './search-panel';
 import LogBtn from './log-btn';
-import { onLogout } from '../../actions';
 
 import './header.css';
-
-const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
-	return { isLoggedIn	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({
-		onLogout
-	}, dispatch);
-};
 
 const Header = ({ isLoggedIn, onLogout }) => {
 	const createAccount = 
@@ -56,4 +43,4 @@ const Header = ({ isLoggedIn, onLogout }) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
