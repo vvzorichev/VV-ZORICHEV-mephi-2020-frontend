@@ -2,23 +2,21 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-width: 140px;
+	width: 140px;
 	height: 35px;
-	list-style: none;
 	margin-right: 5%;
 	border: 1px solid #375a7f;
 	border-radius: 0.25rem;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
 }
 
 .log-btn:last-child {
 	margin-right: 0;
 }
 
-.log-btn a {
-	color: #fff;
-	text-decoration: none;
-}
-
-.log-btn a:hover {
+.log-btn:hover {
 	color: #375a7f;
+	text-decoration: none;
 }

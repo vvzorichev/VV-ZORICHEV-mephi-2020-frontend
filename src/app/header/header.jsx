@@ -8,20 +8,13 @@ import './header.css';
 
 const Header = ({ isLoggedIn, onLogout }) => {
 	const createAccount = isLoggedIn ||
-		<LogBtn 
-			to="/register" 
-			value="Create Account" />;
+		<LogBtn to="/register" value="Create Account" />;
 
 	const login = isLoggedIn ||
-		<LogBtn
-			to="/login" 
-			value="Login" />;
+		<LogBtn to="/login" value="Login" />;
 	
 	const logout = !isLoggedIn ||
-		<LogBtn 
-			to="/login" 
-			value="Logout" 
-			onLog={onLogout} />;
+		<LogBtn	to="/login" value="Logout" onLog={onLogout} />;
 
 	const searchPanel = isLoggedIn && <SearchPanel />
 
