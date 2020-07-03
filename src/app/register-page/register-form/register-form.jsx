@@ -1,8 +1,4 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
-import { onLogin } from '../../../actions';
 
 import { BigBlueBtn } from '../../common/buttons';
 import Checkbox from '../../common/checkbox';
@@ -21,10 +17,4 @@ const RegisterForm = ({ onCreate = null  }) => {
 	);
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({
-		onLogin
-	}, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(RegisterForm);
+export default RegisterForm;

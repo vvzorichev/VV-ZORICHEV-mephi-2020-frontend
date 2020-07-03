@@ -17,8 +17,10 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const UploadFileFormContainer = ({ onUploadFinish, isUpload }) => {
-	return !isUpload ||
-		<UploadFileForm onUploadFinish={onUploadFinish} />;
+	if (!isUpload) {
+		return null;
+	}
+	return <UploadFileForm onUploadFinish={onUploadFinish} />;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadFileFormContainer);

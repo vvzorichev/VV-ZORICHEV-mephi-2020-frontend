@@ -17,8 +17,10 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const UploadBtnContainer = ({ value, onUploadStart, isUpload }) => {
-	return isUpload || 
-		<UploadBtn onUploadStart={onUploadStart} value={value} />;
+	if (isUpload) {
+		return null;
+	}
+	return <UploadBtn onUploadStart={onUploadStart} value={value} />;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadBtnContainer);
