@@ -8,10 +8,6 @@
   margin: auto;
 }
 
-.register-form .checkbox {
-  font-weight: 400;
-}
-
 .register-form .form-control {
   position: relative;
   box-sizing: border-box;

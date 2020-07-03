@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { onUploadStart } from '../actions';
 
+import UploadBtn from './upload-btn.jsx';
+
 const mapStateToProps =  ({ uploadStatus: { isUpload } }) => {
 	return { isUpload	};
 };
@@ -14,16 +16,9 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
-const UploadBtn = ({ value, onUploadStart, isUpload }) => {
-
-	return (
-		isUpload ||
-		<button 
-			className="btn btn-sm btn-secondary"
-			onClick={onUploadStart}>
-			{value}
-		</button>
-	);
+const UploadBtnContainer = ({ value, onUploadStart, isUpload }) => {
+	return isUpload || 
+		<UploadBtn onUploadStart={onUploadStart} value={value} />;
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UploadBtn);
+export default connect(mapStateToProps, mapDispatchToProps)(UploadBtnContainer);

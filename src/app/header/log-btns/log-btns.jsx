@@ -24,7 +24,7 @@ const LogBtns = ({ isLoggedIn, isRegistered, onLogout, onRegistration }) => {
 			onLog={onLogout} />;
 
   return (
-		<div className="header-btns-li">
+		<div className="header-btns">
 			{createAccount}
 			{login}
 			{logout}

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { onUploadFinish } from '../actions';
 
+import UploadFileForm from './upload-file-form.jsx';
+
 const mapStateToProps =  ({ uploadStatus: { isUpload } }) => {
 	return { isUpload	};
 };
@@ -14,19 +16,9 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
-const UploadFileForm = ({ onUploadFinish, isUpload }) => {
-	return (
-		!isUpload ||
-		<form>
-			<input type="file"/>
-			<button 
-				type="submit" 
-				className="btn btn-sm btn-secondary"
-				onClick={onUploadFinish}>
-				Upload
-			</button>
-		</form>
-	);
+const UploadFileFormContainer = ({ onUploadFinish, isUpload }) => {
+	return !isUpload ||
+		<UploadFileForm onUploadFinish={onUploadFinish} />;
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UploadFileForm);
+export default connect(mapStateToProps, mapDispatchToProps)(UploadFileFormContainer);

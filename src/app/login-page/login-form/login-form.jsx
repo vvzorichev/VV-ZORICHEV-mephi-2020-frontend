@@ -11,7 +11,7 @@ import './login-form.css';
 
 const LoginForm = ({ onLogin  }) => {
 	return (
-		<form className="form-signin">
+		<form className="login-form">
 			<input type="email" id="inputEmail" className="form-control" placeholder="Email" required autoFocus />
 			<input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
 			<Checkbox value="Remember me" />
