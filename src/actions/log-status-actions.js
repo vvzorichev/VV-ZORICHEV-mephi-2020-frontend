@@ -10,7 +10,14 @@ const onLogout = () => {
 	};
 };
 
+const onRegistration = () => {
+	return {
+		type: 'REGISTRATION'
+	};
+};
+
 export {
 	onLogin,
-	onLogout
+	onLogout,
+	onRegistration
 };

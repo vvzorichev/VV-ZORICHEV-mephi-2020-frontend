@@ -2,12 +2,14 @@ import fetchMemory from './memory-actions';
 
 import {
 	onLogin,
-	onLogout
+	onLogout,
+	onRegistration
 } from './log-status-actions';
 
 
 export {
 	fetchMemory,
 	onLogin,
-	onLogout
+	onLogout,
+	onRegistration
 };

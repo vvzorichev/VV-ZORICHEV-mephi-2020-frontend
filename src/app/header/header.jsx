@@ -6,15 +6,24 @@ import LogBtn from './log-btn';
 
 import './header.css';
 
-const Header = ({ isLoggedIn, onLogout }) => {
-	const createAccount = isLoggedIn ||
-		<LogBtn to="/register" value="Create Account" />;
+const Header = ({ isLoggedIn, isRegistered, onLogout, onRegistration }) => {
+	const createAccount = isLoggedIn || isRegistered ||
+		<LogBtn 
+			to="/register" 
+			value="Create Account" 
+			onLog={onRegistration} />;
 
-	const login = isLoggedIn ||
-		<LogBtn to="/login" value="Login" />;
+	const login = isLoggedIn || !isRegistered ||
+		<LogBtn 
+			to="/login" 
+			value="Login" 
+			onLog={onLogout} />;
 	
 	const logout = !isLoggedIn ||
-		<LogBtn	to="/login" value="Logout" onLog={onLogout} />;
+		<LogBtn	
+			to="/login" 
+			value="Logout" 
+			onLog={onLogout} />;
 
 	const searchPanel = isLoggedIn && <SearchPanel />
 
