@@ -1,15 +1,29 @@
 .header {
-  margin-top: .5rem;
-	padding-left: 10px;
-	color: white;
+	display: flex;
+	height: 60px;
+	padding: 0 1.5%;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.header a {
+.header-h3 {
+	padding-top: .35%;
+}
+
+.header-h3-link {
 	color: white;
 	text-decoration: none;
 }
 
-.header a:hover {
+.header-h3-link:hover {
 	color: #375a7f;
 	text-decoration: none;
+}
+
+.header-btns-li {
+	margin-bottom: 0;
+	padding-left: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }

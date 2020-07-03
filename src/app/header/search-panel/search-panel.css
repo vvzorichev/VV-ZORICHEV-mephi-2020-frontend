@@ -1,3 +1,7 @@
+.search-panel {
+	margin: 0 10% 0 10%;
+	width: 100%;
+}
 .search-panel .form-control {
 	background-color: #222;
 	color: white;

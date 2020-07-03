@@ -24,7 +24,7 @@ const SearchPanel = ({ onSearch, history }) => {
 	};
 
 	return (
-		<div className="search-panel mr-auto col-6 mt-2">
+		<div className="search-panel">
 			<input 
 				type="text" 
 				className="form-control"
