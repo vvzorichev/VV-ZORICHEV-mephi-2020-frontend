@@ -6,24 +6,13 @@
 	justify-content: space-between;
 }
 
-.header-h3 {
-	padding-top: .35%;
-}
-
 .header-h3-link {
 	color: white;
 	text-decoration: none;
+	font-size: 2rem;
 }
 
 .header-h3-link:hover {
 	color: #375a7f;
 	text-decoration: none;
-}
-
-.header-btns-li {
-	margin-bottom: 0;
-	padding-left: 0;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 }
