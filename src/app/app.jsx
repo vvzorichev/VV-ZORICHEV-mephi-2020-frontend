@@ -6,8 +6,6 @@ import MyCloudPage from './my-cloud-page';
 import LoginPage from './login-page';
 import RegisterPage from './register-page';
 
-import './app.css';
-
 const App = () => {
 	return (
 		<Router>

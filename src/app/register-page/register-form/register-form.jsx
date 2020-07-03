@@ -11,7 +11,7 @@ import './register-form.css';
 
 const RegisterForm = ({ onCreate = null  }) => {
 	return (
-		<form className="form-signin">
+		<form className="register-form">
 			<input type="email" id="inputEmail" className="form-control" placeholder="Email address" required autoFocus />
 			<input type="password" id="inputPassword" className="form-control center" placeholder="Password" required />
 			<input type="password" id="retypePassword" className="form-control" placeholder="Retype password" required />

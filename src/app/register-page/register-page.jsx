@@ -1,34 +1,21 @@
-import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from 'react';
 
 import RegisterForm  from './register-form';
 
-const RegisterPage = ({ isLoggedIn }) => {
+import './register-page.css';
 
-	useEffect(() => {
-		document.title = 'Register - SafeCloud'
-	});
-
-	if (isLoggedIn) {
-		return <Redirect to="/mycloud/drive" />;
-	}
-
+const RegisterPage = () => {
   return (
-    <div className="text-center flex-column">
-			<h1 className="h3 mb-1 font-weight-normal">
+    <div className="register-page">
+			<h1 className="rp-header">
 				Create your account
 			</h1>
 			<RegisterForm />
-			<p className="mt-5 text-muted">
+			<p className="rp-p">
 				&copy; SafeCloud 2020
 			</p>
 		</div>
   );
 };
 
-const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
-	return { isLoggedIn	};
-};
-
-export default connect(mapStateToProps)(RegisterPage);
+export default RegisterPage;

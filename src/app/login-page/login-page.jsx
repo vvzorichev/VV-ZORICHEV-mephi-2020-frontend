@@ -1,34 +1,21 @@
-import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from 'react';
 
 import LoginForm from './login-form';
 
-const mapStateToProps =  ({ logStatus: { isLoggedIn } }) => {
-	return { isLoggedIn	};
-};
+import './login-page.css';
 
-const LoginPage = ({ isLoggedIn }) => {
-
-	useEffect(() => {
-		document.title = 'Login - SafeCloud'
-	});
-
-	if (isLoggedIn) {
-		return <Redirect to="/mycloud/drive" />;
-	}
-
+const LoginPage = () => {
   return (
-    <div className="text-center flex-column">
-			<h1 className="h3 mb-1 font-weight-normal">
+    <div className="login-page">
+			<h1 className="lp-header">
 				Login
 			</h1>
 			<LoginForm />
-			<p className="mt-5 text-muted">
+			<p className="lp-p">
 				&copy; SafeCloud 2020
 			</p>
 		</div>
   );
 };
 
-export default connect(mapStateToProps)(LoginPage);
+export default LoginPage;

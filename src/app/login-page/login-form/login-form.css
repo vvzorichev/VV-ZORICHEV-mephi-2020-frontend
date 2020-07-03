@@ -1,4 +1,7 @@
 .form-signin {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
   width: 100%;
   max-width: 330px;
   padding: 15px;

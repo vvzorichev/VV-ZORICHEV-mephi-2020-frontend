@@ -1,9 +1,0 @@
-.text-center {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 80px;
-	padding-bottom: 40px;
-	height: 100%;
-}
