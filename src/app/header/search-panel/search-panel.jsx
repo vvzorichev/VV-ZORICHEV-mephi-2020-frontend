@@ -7,7 +7,7 @@ const SearchPanel = ({ onChange }) => {
 		<div className="search-panel">
 			<input 
 				type="text" 
-				className="form-control"
+				className="search-panel-input"
 				placeholder="Search in Cloud"
 				onChange={onChange}/>
 		</div>

@@ -1,11 +1,12 @@
 import React from 'react';
 
 import UploadMenu from './upload-menu';
+import PathToFile from './path-to-file';
 
 const Toolbar = () => {
 	return (
 		<div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-			<h4 className="h4">Cloud Drive &rsaquo;</h4>
+			<PathToFile />
 			<UploadMenu />
 		</div>
 	);

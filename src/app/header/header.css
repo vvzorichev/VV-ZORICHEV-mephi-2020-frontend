@@ -1,4 +1,4 @@
-.header {
+.header-head {
 	display: flex;
 	height: 60px;
 	padding: 0 1.5%;
@@ -6,13 +6,13 @@
 	justify-content: space-between;
 }
 
-.header-h3-link {
+.header-link {
 	color: white;
 	text-decoration: none;
 	font-size: 2rem;
 }
 
-.header-h3-link:hover {
+.header-link:hover {
 	color: #375a7f;
 	text-decoration: none;
 }

@@ -8,8 +8,8 @@ import './header.css';
 
 const Header = () => {
   return (
-		<div className="header">
-			<Link className="header-h3-link" to="/mycloud/drive">
+		<div className="header-head">
+			<Link className="header-link" to="/mycloud/drive">
 				SafeCloud
 			</Link>
 			<SearchPanel />

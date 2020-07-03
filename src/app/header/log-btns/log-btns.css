@@ -1,7 +1,5 @@
 .header-btns {
 	margin-top: .2rem;
-	margin-bottom: 0;
-	padding-left: 0;
 	display: flex;
 	align-items: center;
 }
