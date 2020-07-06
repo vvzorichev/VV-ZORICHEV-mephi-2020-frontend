@@ -19,7 +19,7 @@ const filesFilter = (file, searchField, section) => {
 			const month = (new Date()).getMonth();
 			const reg1 = new RegExp(`/${month}/`);
 			const reg2 = new RegExp(`/${month + 1}/`);
-			return reg1.test(file.date_added) || reg2.test(file.date_added);
+			return reg1.test(file.dateAdded) || reg2.test(file.dateAdded);
 
 		case 'tagged':
 			return file.isTagged;
