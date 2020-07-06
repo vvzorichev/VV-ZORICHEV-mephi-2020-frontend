@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './sidebar-item.css'
 
-const SidebarItem = ({ value, nav, section }) => {
-
-	const [ active, setActive ] = useState(false);
-
-	useEffect(() => {
-		setActive(section === nav);
-	}, [ section, nav ]);
-
+const SidebarItem = ({ value, section, active }) => {
 	return (
-		<li className="nav-item">
-			<Link 
-				className={`nav-link ${active ? "active" : null}`} 
-				to={nav} >
-				{value}
-			</Link>
-		</li>
+		<Link 
+			className={`nav-link ${active ? "active" : null}`} 
+			to={section} >
+			{value}
+		</Link>
 	)
 };
 

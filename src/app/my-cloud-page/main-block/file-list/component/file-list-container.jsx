@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -25,20 +26,21 @@ const mapDispatchToProps = (dispatch, { fileService }) => {
 };
 
 class FileListContainer extends Component {
-
 	componentDidMount() {
 		this.props.fetchFiles();		
 	}
-
+	
 	render() {
+		
 		const { 
 			loading, 
 			error, 
 			files, 
-			section, 
+			match, 
 			searchField } = this.props;
-			console.log(this.props);
 			
+		const nav = match.params.nav || 'drive';
+		
 		if (loading) {
 			return <Spinner />;
 		}
@@ -50,7 +52,7 @@ class FileListContainer extends Component {
 		return (
 			<FileList 
 				files={files} 
-				section={section} 
+				section={nav} 
 				searchField={searchField} /> 
 		);
 	}
@@ -58,5 +60,6 @@ class FileListContainer extends Component {
 
 export default compose(
 	withFileService(),
-	connect(mapStateToProps, mapDispatchToProps)
+	connect(mapStateToProps, mapDispatchToProps),
+	withRouter
 )(FileListContainer);
