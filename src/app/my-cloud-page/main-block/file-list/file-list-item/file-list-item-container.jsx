@@ -18,18 +18,26 @@ const mapDispatchToProps = (dispatch) => {
 
 const FileListItemContainer = ({ file = {}, changeFileTag, onOpenFolder, history }) => {
 
-	const handleOpening = () => {
+	const handleFolderOpening = () => {
 		if (history.location.pathname !== '/mycloud/drive') {
 			history.replace('/mycloud/drive');
 		}
-		onOpenFolder(file.id);
+		onOpenFolder(file.name);
 	};
+
+	if (file.type === 'folder') {
+		return (
+			<FileListItem 
+			file={file}
+			changeFileTag={changeFileTag}
+			onOpenFolder={handleFolderOpening} />
+		)
+	}
 
 	return (
 		<FileListItem 
 			file={file}
-			changeFileTag={changeFileTag}
-			onOpenFolder={handleOpening} />
+			changeFileTag={changeFileTag} />
 	);
 };
 

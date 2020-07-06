@@ -5,30 +5,27 @@ import updateLogStatus from './update-log-status';
 import updateUploadStatus from '../my-cloud-page/main-block/toolbar/upload-menu/reducers';
 import updateFolderStatus from '../my-cloud-page/main-block/reducers';
 
+const updateState = (state, action) => {
+	return {
+		uploadStatus : updateUploadStatus(state, action),
+		fileList: updateFileList(state, action),
+		memory: updateMemory(state, action),
+		searchField: updateSearchField(state, action),
+		folderStatus: updateFolderStatus(state, action)
+	};
+};
 
 const reducer = (state, action) => {
-	const fileList = updateFileList(state, action);
-	const memory = updateMemory(state, action);
 	const logStatus = updateLogStatus(state, action);
-	const folderStatus = updateFolderStatus(state, action);
 
-	const searchField =
+	const otherStates = 
 		logStatus.isLoggedIn ?
-		updateSearchField(state, action) :
-		updateSearchField(undefined, action);
-	
-	const uploadStatus = 
-		logStatus.isLoggedIn ? 
-		updateUploadStatus(state, action) :
-		updateUploadStatus(undefined, action);
+		updateState(state, action) :
+		updateState(undefined, action);
 
 	return {
-		fileList,
-		memory,
 		logStatus,
-		folderStatus,
-		searchField,
-		uploadStatus
+		...otherStates
 	}
 };
 

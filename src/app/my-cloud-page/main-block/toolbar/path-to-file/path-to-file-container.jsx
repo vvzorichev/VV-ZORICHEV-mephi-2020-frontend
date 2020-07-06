@@ -1,9 +1,14 @@
 import React from 'react';
 
 import PathToFile from './path-to-file';
+import { connect } from 'react-redux';
 
-const PathToFileContainer = () => {
-	return <PathToFile />;
+const mapStateToProps = ({ folderStatus: { path } }) => {
+	return { path };
 };
 
-export default PathToFileContainer;
+const PathToFileContainer = ({ path }) => {
+	return <PathToFile path={path} />;
+};
+
+export default connect(mapStateToProps)(PathToFileContainer);

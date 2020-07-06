@@ -3,7 +3,7 @@ const updateFolderStatus = (state, action) => {
 		
 		return {
 			isOpen: false,
-			id: null,
+			path: [],
 		};
 	}
 
@@ -12,13 +12,13 @@ const updateFolderStatus = (state, action) => {
 		case 'OPEN':
 			return {
 				isOpen: true,
-				id: action.payload
+				path: [...state.folderStatus.path, action.payload]
 			};
 
 		case 'CLOSE':
 			return {
 				isOpen: false,
-				id: null
+				path: []
 			};
 
 		default:

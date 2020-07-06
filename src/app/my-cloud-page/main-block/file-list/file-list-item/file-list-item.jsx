@@ -4,7 +4,7 @@ import Checkbox from '../../../../common/checkbox';
 
 import './file-list-item.css';
 
-const FileListItem = ({ file, changeFileTag, onOpenFolder }) => {
+const FileListItem = ({ file, changeFileTag, onOpenFolder = null }) => {
 	const { id, name, size, type, dateAdded, isTagged } = file;
 
 	return (
