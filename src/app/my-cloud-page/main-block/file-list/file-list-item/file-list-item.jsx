@@ -15,7 +15,7 @@ const FileListItem = ({ file, changeFileTag, onOpenFolder }) => {
 					isTagged={isTagged} 
 					changeFileTag={changeFileTag} />
 			</td>
-			<td className="file-name" onClick={() => onOpenFolder(id)}>
+			<td className="file-name" onClick={onOpenFolder}>
 				{name}
 			</td>
 			<td>{size}</td>
