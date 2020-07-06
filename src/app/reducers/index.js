@@ -1,9 +1,9 @@
-import updateFileList from '../app/my-cloud-page/main-block/file-list/reducers/update-file-list';
+import updateFileList from '../my-cloud-page/main-block/file-list/reducers/update-file-list';
 import updateMemory from './update-memory';
-import updateSearchField from '../app/header/search-panel/reducers';
+import updateSearchField from '../header/search-panel/reducers';
 import updateLogStatus from './update-log-status';
-import updateUploadStatus from '../app/my-cloud-page/main-block/toolbar/upload-menu/reducers';
-import updateFolderStatus from '../app/my-cloud-page/main-block/reducers';
+import updateUploadStatus from '../my-cloud-page/main-block/toolbar/upload-menu/reducers';
+import updateFolderStatus from '../my-cloud-page/main-block/reducers';
 
 
 const reducer = (state, action) => {

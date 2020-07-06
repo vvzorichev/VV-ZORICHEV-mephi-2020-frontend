@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { withMemoryService } from '../../../common/hoc-helpers';
 import { compose } from '../../../../utils';
-import { fetchMemory } from '../../../../actions';
+import { fetchMemory } from '../../../actions';
 
 import Spinner from '../../../common/spinner';
 import ErrorIndicator from '../../../common/error-indicator';
