@@ -4,6 +4,7 @@ import FileListItem from '../file-list-item';
 import { filesFilter } from '../../../../../utils';
 
 const FileList = ({ section, files, searchField, changeFileTag }) => {
+	console.log(section);
 
 	return (
 		<div className="table-responsive">

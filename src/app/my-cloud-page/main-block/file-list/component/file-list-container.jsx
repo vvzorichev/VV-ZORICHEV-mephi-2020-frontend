@@ -37,7 +37,8 @@ class FileListContainer extends Component {
 			files, 
 			section, 
 			searchField } = this.props;
-
+			console.log(this.props);
+			
 		if (loading) {
 			return <Spinner />;
 		}

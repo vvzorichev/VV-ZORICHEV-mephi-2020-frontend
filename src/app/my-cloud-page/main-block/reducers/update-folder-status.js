@@ -1,5 +1,4 @@
 const updateFolderStatus = (state, action) => {
-	console.log(state);
 	if (state === undefined) {
 		
 		return {
@@ -23,7 +22,6 @@ const updateFolderStatus = (state, action) => {
 			};
 
 		default:
-			console.log(state);
 			return state.folderStatus;
 	}
 };

@@ -20,7 +20,7 @@ const MyCloudPageContainer = ({ isLoggedIn, match }) => {
 	if (!isLoggedIn) {
 		return <Redirect to="/login" />;
 	}
-
+	
 	return <MyCloudPage nav={nav} />;
 };
 
