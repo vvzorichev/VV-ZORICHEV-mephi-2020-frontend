@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FileListItem from './file-list-item';
-import { filesFilter } from '../../../utils';
+import FileListItem from '../file-list-item';
+import { filesFilter } from '../../../../../utils';
 
 const FileList = ({ section, files, searchField, changeFileTag }) => {
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import Header from './header';
-import MyCloudPage from './my-cloud-page';
-import LoginPage from './login-page';
-import RegisterPage from './register-page';
+import Header from './header/component';
+import MyCloudPage from './my-cloud-page/component';
+import LoginPage from './login-page/component';
+import RegisterPage from './register-page/component';
 
 const App = () => {
 	return (

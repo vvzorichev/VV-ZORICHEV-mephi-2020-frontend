@@ -1,7 +1,10 @@
 import React from 'react';
-import Checkbox from '../../../common/checkbox';
 
-const FileListItem = ({ file = {}, changeFileTag }) => {
+import Checkbox from '../../../../common/checkbox';
+
+import './file-list-item.css';
+
+const FileListItem = ({ file, changeFileTag, onOpenFolder }) => {
 	const { id, name, size, type, dateAdded, isTagged } = file;
 
 	return (
@@ -12,7 +15,9 @@ const FileListItem = ({ file = {}, changeFileTag }) => {
 					isTagged={isTagged} 
 					changeFileTag={changeFileTag} />
 			</td>
-			<td>{name}</td>
+			<td className="file-name" onClick={() => onOpenFolder(id)}>
+				{name}
+			</td>
 			<td>{size}</td>
 			<td>{type}</td>
 			<td>{dateAdded}</td>

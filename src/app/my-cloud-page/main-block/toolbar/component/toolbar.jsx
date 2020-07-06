@@ -1,7 +1,7 @@
 import React from 'react';
 
-import UploadMenu from './upload-menu';
-import PathToFile from './path-to-file';
+import UploadMenu from '../upload-menu/component';
+import PathToFile from '../path-to-file';
 
 const Toolbar = () => {
 	return (

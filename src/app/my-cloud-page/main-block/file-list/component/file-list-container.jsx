@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { withFileService } from '../../common/hoc-helpers';
-import { compose } from '../../../utils';
-import { fetchFiles, changeFileTag } from './actions';
+import { withFileService } from '../../../../common/hoc-helpers';
+import { compose } from '../../../../../utils';
+import { fetchFiles } from '../actions';
 
-import Spinner from '../../common/spinner';
-import ErrorIndicator from '../../common/error-indicator';
+import Spinner from '../../../../common/spinner';
+import ErrorIndicator from '../../../../common/error-indicator';
 
 import FileList from './file-list.jsx'
 
@@ -20,8 +20,7 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = (dispatch, { fileService }) => {
 	return bindActionCreators({
-		fetchFiles: fetchFiles(fileService),
-		changeFileTag
+		fetchFiles: fetchFiles(fileService)
 	}, dispatch);
 };
 
@@ -33,12 +32,11 @@ class FileListContainer extends Component {
 
 	render() {
 		const { 
-			files, 
 			loading, 
 			error, 
+			files, 
 			section, 
-			searchField,
-			changeFileTag } = this.props;
+			searchField } = this.props;
 
 		if (loading) {
 			return <Spinner />;
@@ -50,10 +48,9 @@ class FileListContainer extends Component {
 
 		return (
 			<FileList 
-				section={section} 
 				files={files} 
-				searchField={searchField}
-				changeFileTag={changeFileTag} /> 
+				section={section} 
+				searchField={searchField} /> 
 		);
 	}
 };

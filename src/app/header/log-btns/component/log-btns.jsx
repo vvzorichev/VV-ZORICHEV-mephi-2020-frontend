@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LogBtn from './log-btn';
+import LogBtn from '../log-btn';
 
 import './log-btns.css';
 

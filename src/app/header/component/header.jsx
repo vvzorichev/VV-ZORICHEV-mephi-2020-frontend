@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SearchPanel from './search-panel';
-import LogBtns from './log-btns';
+import SearchPanel from '../search-panel';
+import LogBtns from '../log-btns/component';
 
 import './header.css';
 

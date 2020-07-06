@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { compose } from '../../utils';
+import { compose } from '../../../utils';
 
 import MyCloudPage from './my-cloud-page.jsx';
 

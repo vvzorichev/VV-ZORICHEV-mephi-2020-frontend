@@ -1,6 +1,6 @@
 import React from 'react';
-import SidebarItem from './sidebar-item';
-import Memory from './memory';
+import SidebarItem from '../sidebar-item';
+import Memory from '../memory';
 
 import './sidebar.css';
 
