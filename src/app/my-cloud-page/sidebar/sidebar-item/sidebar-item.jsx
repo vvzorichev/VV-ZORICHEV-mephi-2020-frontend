@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './sidebar-item.css'
 
-const SidebarItem = ({ value, section, active }) => {
+const SidebarItem = ({ value, section }) => {
 	return (
-		<Link 
-			className={`nav-link ${active ? "active" : null}`} 
+		<NavLink 
+			className="nav-link"
+			activeClassName="active" 
 			to={section} >
 			{value}
-		</Link>
+		</NavLink>
 	)
 };
 

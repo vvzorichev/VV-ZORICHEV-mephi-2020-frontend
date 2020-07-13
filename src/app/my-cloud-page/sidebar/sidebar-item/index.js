@@ -1,3 +1,3 @@
-import SidebarItem from "./sidebar-item-container.jsx";
+import SidebarItem from "./sidebar-item.jsx";
 
 export default SidebarItem;
