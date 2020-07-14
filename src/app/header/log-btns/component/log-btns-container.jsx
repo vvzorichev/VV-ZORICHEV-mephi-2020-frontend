@@ -17,19 +17,8 @@ const mapDispatchToProps = (dispatch) => {
 	}, dispatch);
 };
 
-const LogBtnsContainer = ({ 
-	isLoggedIn, 
-	isRegistered, 
-	onLogout, 
-	onRegistration }) => {
-	
-	return (
-		<LogBtns
-			isLoggedIn={isLoggedIn}
-			isRegistered={isRegistered}
-			onRegistration={onRegistration}
-			onLogout={onLogout} />
-	);
+const LogBtnsContainer = (props) => {
+	return <LogBtns {...props} />;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LogBtnsContainer);
